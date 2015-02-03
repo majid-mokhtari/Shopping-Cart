@@ -1,0 +1,29 @@
+/*
+==============================================
+Shopping Cart application
+==============================================
+*/
+
+.addItemToCart input{
+	width: 300px;
+}
+.quantity{
+	width: 50px;
+}
+
+.totalCost{
+	background-color: lightgrey;
+	box-shadow: 5px 4px 3px black;
+	border-radius: 5px;
+	width: 320px;
+	padding: 20px 0;	
+}
+
+.totalCost span{
+	color: darkred;
+}
+
+
+
+
+
