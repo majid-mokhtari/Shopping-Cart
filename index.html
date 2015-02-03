@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>
+         Shopping Cart
+      </title>
+      <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="styleCart.css">
+   </head>
+   <body>
+      <div class="container">
+         <h1 class="text-center">Shopping Cart</h1>
+         <hr>
+      	 <div class="row app">
+              <div class="col-sm-6 addItemToCart" >  
+                <h3 >Add New Item</h3>
+                    <hr/>
+                <div class="form-group">
+                   <label>Name: </label> 
+                   <input type="text" data-bind="value: newItemName, valueUpdate: 'keyup'" class="form-control" placeholder="Name is necessaary"/>
+                </div>
+                <div class="form-group">
+                   <label>Unit Price: </label>
+                   <input type="number" min="0" step="0.25" data-bind="value: newItemPrice, valueUpdate: 'keyup'" class="form-control" placeholder="Price is necessaary" />
+                </div>
+                <button data-bind="click: addNewItem, enable: addNewItemEnabled" class="submit btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add Item</button>
+            </div>
+            <div class="col-sm-6 cart" >
+                 <h3 data-bind="visible: itemsInCart().length >= 0" class="text-center">Items in Cart</h3>
+                     <hr/>
+                    <table data-bind="visible: itemsInCart().length >= 0" class="table">
+                       <thead>
+                          <tr>
+                             <th>Name</th>
+                             <th>Unit Price</th>
+                             <th>Quantity</th>
+                          </tr>
+                       </thead>
+                       <tbody data-bind="foreach: itemsInCart">
+                          <tr>
+                             <td data-bind="text: name"></td>
+                             <td>$<span data-bind="text: formattedPrice"></span></td>
+                             <td><input type="number" min="1" step="1" data-bind="value: quantity" class="quantity" ></td>
+                             <td><button data-bind="click: $parent.removeItem" class="submit btn btn-primary"><span class="glyphicon glyphicon-trash"></span> Remove Item</button></td>
+                          </tr>
+                       </tbody>
+                    </table>
+            </div>
+            <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+            <div class="col-sm-6 text-center">
+               <hr/>
+                <h3 data-bind="fadeVisible: itemsInCart().length > 0" class=" totalCost"> 
+                            Your total cost is: $<span data-bind="text: calculateTotal()">
+                          </span>
+                </h3>
+            </div>
+        </div>
+      </div>
+
+      <script src="http://code.jquery.com/jquery.min.js"></script>
+      <script src="knockout-3.2.0.js"></script>
+      <script src="cart.js"></script>
+   </body>
+</html>
+
