@@ -25,7 +25,7 @@ function CartViewModel() {
     // Data
     var self = this;
     self.newItemName = ko.observable();
-    self.newItemPrice = ko.observable(0);
+    self.newItemPrice = ko.observable();
     self.newItemQuantity = ko.observable(1);
 
     self.itemsInCart = ko.observableArray([]);
