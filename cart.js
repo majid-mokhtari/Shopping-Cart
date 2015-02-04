@@ -67,7 +67,7 @@ function CartViewModel() {
      var name = self.newItemName(),
          price = self.newItemPrice();
 
-     return name && name.length ;
+     return name && name.length && price && price.length;
     }, CartViewModel);
 }
 
