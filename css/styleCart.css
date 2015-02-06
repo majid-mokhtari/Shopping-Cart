@@ -12,15 +12,21 @@ Shopping Cart application
 }
 
 .totalCost{
-	background-color: lightgrey;
-	box-shadow: 5px 4px 3px black;
-	border-radius: 5px;
-	width: 320px;
-	padding: 20px 0;	
+	width: 300px;
+	float: left;
 }
-
+.itemsNumber{
+	padding: 20px 0;
+	width: 350px;
+}
+.itemsNumber span{
+	color: darkred;
+}
 .totalCost span{
 	color: darkred;
+}
+.removeButton{
+	margin-top: 20px;
 }
 
 

@@ -11,7 +11,7 @@ knockoutjs - Shopping Cart App
 //creating item object using function constructer
 function Item(name, price, quantity) {
     this.name = name;
-    this.price = price;  
+    this.price = parseFloat(price).toFixed(2);  
     this.quantity = ko.observable(quantity);
 }
 
@@ -41,8 +41,12 @@ function CartViewModel() {
         for(var i=0; i<self.itemsInCart().length; i++)
             total += self.itemsInCart()[i].quantity()*self.itemsInCart()[i].price;
             
-            return total.toFixed(2);
+            return total;
     });
+
+    self.removeAll = function(){
+        self.itemsInCart([]);
+    }
 
     //jQuery effect
     ko.bindingHandlers.fadeVisible = {
