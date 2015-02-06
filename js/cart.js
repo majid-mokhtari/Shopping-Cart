@@ -10,13 +10,8 @@ knockoutjs - Shopping Cart App
 
 //creating item object using function constructer
 function Item(name, price, quantity) {
-    var self = this;
-    self.name = name;
-    self.price = parseFloat(price).toFixed(2);  
-    self.formattedPrice = ko.computed(function(){
-        var price = self.price;
-        return price === 'NaN' ? 0 : price;
-    });
+    this.name = name;
+    this.price = price;  
     this.quantity = ko.observable(quantity);
 }
 
@@ -30,11 +25,12 @@ function CartViewModel() {
 
     self.itemsInCart = ko.observableArray([]);
     
-    // Operations
+    //Operations
     //add new item to the cart
     self.addNewItem = function() {
         self.itemsInCart.push(new Item(self.newItemName(), self.newItemPrice(), self.newItemQuantity() ));
         self.newItemName("");
+        self.newItemPrice("");
     };
     //remove item ffrom the row when clicked on remove button
     self.removeItem = function(task) { self.itemsInCart.remove(task) };
