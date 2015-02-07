@@ -39,9 +39,15 @@ function CartViewModel() {
     self.calculateTotal = ko.computed(function(){
         var total= 0;
         for(var i=0; i<self.itemsInCart().length; i++)
-            total += self.itemsInCart()[i].quantity()*self.itemsInCart()[i].price;
-            
+            total += self.itemsInCart()[i].quantity()*self.itemsInCart()[i].price;     
             return total;
+    });
+     //calculating the total quantity and updating when cart items and quantity changes
+    self.calculateQuantity = ko.computed(function(){
+        var total =0;
+        for(var i=0; i<self.itemsInCart().length; i++)
+            total += parseInt(self.itemsInCart()[i].quantity()); 
+            return total; 
     });
 
     self.removeAll = function(){

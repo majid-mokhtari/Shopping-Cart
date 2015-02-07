@@ -51,10 +51,9 @@
             <div class="col-sm-6 text-center" data-bind="fadeVisible: itemsInCart().length > 0">
                <hr/>
                 <h3  class="itemsNumber"> 
-                            Number of item(s): <span data-bind="text: itemsInCart().length">
+                            Number of item(s): <span data-bind="text: calculateQuantity()">
                           </span> 
                 </h3>
-
             </div>
             <div class="col-sm-6 text-center" data-bind="fadeVisible: itemsInCart().length > 0">
                <hr/>
