@@ -28,6 +28,20 @@ Shopping Cart application
 .removeButton{
 	margin-top: 20px;
 }
+.addItemToCart h3, .cart h3{
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+}
+.itemsNumber, .totalCost{
+	border-top: 1px solid black;
+	padding-top: 10px;
+}
+.table thead tr th{
+	border-bottom: 1px dashed black;
+}
+.table tbody tr td{
+	border-top: 1px dashed black;
+}
 
 
 
